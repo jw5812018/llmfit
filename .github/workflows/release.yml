@@ -253,7 +253,7 @@ jobs:
   publish-python:
     needs: release
     # Run when release succeeds, even if upstream sign-windows was skipped or failed
-    if: needs.release.result == 'success'
+    if: always() && needs.release.result == 'success'
     runs-on: ubuntu-latest
     environment:
       name: pypi
@@ -319,7 +319,7 @@ jobs:
 
   publish-crate:
     needs: release
-    if: needs.release.result == 'success'
+    if: always() && needs.release.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -349,7 +349,7 @@ jobs:
 
   update-homebrew:
     needs: release
-    if: needs.release.result == 'success'
+    if: always() && needs.release.result == 'success'
     runs-on: ubuntu-latest
 
     steps:
