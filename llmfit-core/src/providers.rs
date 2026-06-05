@@ -1988,8 +1988,7 @@ impl ModelProvider for LmStudioProvider {
                             if let Some(ref key) = api_key {
                                 req = req.header("Authorization", &format!("Bearer {}", key));
                             }
-                            let Ok(resp) = req.call()
-                            else {
+                            let Ok(resp) = req.call() else {
                                 continue;
                             };
 
