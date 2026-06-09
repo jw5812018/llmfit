@@ -2615,9 +2615,7 @@ fn main() {
                         for (id, desc) in hf_results.iter().take(20) {
                             println!("{:<50} {}", id, desc);
                         }
-                        println!(
-                            "\nTo download: llmfit download <repository>"
-                        );
+                        println!("\nTo download: llmfit download <repository>");
                         println!(
                             "Tip: run 'llmfit update' to add trending models to the local index."
                         );
